@@ -45,4 +45,6 @@ if __name__ == "__main__":
     se = [[1,1,1],[1,1,1],[1,1,1]]
 
     print(erode_image_2d(image_2d, se))
+
+    # Expected output: 6
     
