@@ -47,4 +47,5 @@ if __name__ == "__main__":
     print(erode_image_2d(image_2d, se))
 
     # Expected output: 6
+    # The eroded image will have six 1s remaining after applying the structuring element.
     
