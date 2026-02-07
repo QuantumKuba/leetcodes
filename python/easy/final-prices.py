@@ -11,17 +11,23 @@ class Solution:
     #     return result
 
     def finalPrices(self, prices: List[int]) -> List[int]:
-        result = prices
-        stack = [0]
-        i = 1 
+        result = prices # make a copy of prices
+        stack = [0] # stack to store the indices of the prices that are greater than the current price
+        i = 1 # current index
 
+
+        # untill end of the array
         while (i < len(prices)):
+            # while stack is not empty and the price at the top of the stack is greater than or equal to the current price
             while(len(stack) != 0 and prices[stack[-1]] >= prices[i]):
+                # apply the discount to the pirce at the top of the stack vs the current index and add it to the result
                 result[stack[-1]] = prices[stack[-1]] - prices[i]
-
+                # pop the index from the stack because we found the next smaller element
                 stack.pop()
 
+            # push the current index to the stack
             stack.append(i)
+            # increment the current index
             i+=1
 
         return result
